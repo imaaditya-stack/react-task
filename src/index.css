@@ -61,14 +61,7 @@ h1 {
   font-weight: bold;
 }
 
-.user-page-footer {
-  position: absolute;
-  left: 0;
-  bottom: 100px;
-  right: 0;
-}
-
-.user-page-footer .btn:first-child {
+.user-page-wrapper .btn:first-child {
   margin-right: 30px;
 }
 

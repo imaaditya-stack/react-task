@@ -5,6 +5,7 @@ import { retrieveUserSession, updatePassword } from "../utils";
 import { useHistory } from "react-router-dom";
 import UserInfo from "../components/UserPageComponents/UserInfo";
 import UserPageFooter from "../components/UserPageComponents/UserPageFooter";
+import { showToast } from "../components/Toast";
 
 const User = () => {
   const [newPassword, setNewPassword] = useState();
@@ -17,11 +18,11 @@ const User = () => {
 
   const saveNewPassword = () => {
     if (newPassword.length < 5) {
-      alert("Password length is very short !");
+      showToast("error", "Password length is very short !");
     } else {
       updatePassword(USER_SESSION, newPassword);
       setToggleInput((prevState) => !prevState);
-      alert("Password Changed !");
+      showToast("success", "Password Changed !");
     }
   };
 
@@ -35,7 +36,7 @@ const User = () => {
   return (
     <>
       <NavbarComponent />
-      <Container>
+      <Container className="user-page-wrapper">
         <h1>Edit your profile !</h1>
         <UserInfo
           USER_SESSION={USER_SESSION}

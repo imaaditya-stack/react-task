@@ -7,6 +7,7 @@ import AddTaskFormModal from "../components/TaskPageComponents/Modal";
 import Loader from "../components/Loader";
 import DataTable from "../components/TaskPageComponents/Table";
 import TaskForm from "../components/TaskPageComponents/TaskForm";
+import { showToast } from "../components/Toast";
 
 const Task = () => {
   // DATA STATE
@@ -45,6 +46,7 @@ const Task = () => {
     setData((prevState) => [newTodo, ...prevState]);
     setShow(false);
     resetState();
+    showToast("success", "Task added successfully !");
   };
 
   const handleChange = (e) => {
@@ -54,6 +56,7 @@ const Task = () => {
   const handleDelete = (record) => {
     let newData = data.filter((task) => task.id !== record.id);
     setData(newData);
+    showToast("success", "Task deleted successfully !");
   };
 
   return (

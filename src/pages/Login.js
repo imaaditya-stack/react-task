@@ -3,6 +3,7 @@ import { Container } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import LoginForm from "../components/LoginPageComponents/LoginForm";
 import { storeUserSession } from "../utils";
+import { showToast } from "../components/Toast";
 
 const Login = () => {
   const [loginCredentials, setLoginCredentials] = useState({});
@@ -19,12 +20,13 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (loginCredentials.username.length < 5) {
-      alert("Username is very short !");
+      showToast("error", "Username is very short !");
     } else if (loginCredentials.password.length < 5) {
-      alert("Password length is very short !");
+      showToast("error", "Password length is very short !");
     } else {
       storeUserSession(loginCredentials);
       history.push("/home");
+      showToast("success", "Logged In Successfully");
     }
   };
 
