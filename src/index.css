@@ -87,3 +87,9 @@ h1 {
   letter-spacing: 2px;
   font-size: 60px;
 }
+
+@media screen and (max-width: 1024px) {
+  .nav-link {
+    margin: 0 !important;
+  }
+}
