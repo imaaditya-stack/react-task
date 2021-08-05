@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "label": "Full Stack Development",
+    "description": "Full stack development refers to the development of both front end(client side) and back end(server side) portions of web application. Full stack web developers have the ability to design complete web application and websites. They work on the frontend, backend, database and debugging of web application or websites."
+  },
+  {
+    "id": 2,
+    "label": "Data Science",
+    "description": "Data science continues to evolve as one of the most promising and in-demand career paths for skilled professionals. Today, successful data professionals understand that they must advance past the traditional skills of analyzing large amounts of data, data mining, and programming skills. In order to uncover useful intelligence for their organizations, data scientists must master the full spectrum of the data science life cycle and possess a level of flexibility and understanding to maximize returns at each phase of the process."
+  },
+  {
+    "id": 3,
+    "label": "Artificial Intelligence (AI)",
+    "description": "At its simplest form, artificial intelligence is a field, which combines computer science and robust datasets, to enable problem-solving. It also encompasses sub-fields of machine learning and deep learning, which are frequently mentioned in conjunction with artificial intelligence. These disciplines are comprised of AI algorithms which seek to create expert systems which make predictions or classifications based on input data."
+  }
+]

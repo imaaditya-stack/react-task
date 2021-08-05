@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import PrivateRoute from "./components/Private.Route";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import NotFound from "./pages/NotFound";
+import Task from "./pages/Task";
+import User from "./pages/User";
+import { retrieveUserSession } from "./utils";
 
-function App() {
+const App = () => {
+  useEffect(() => {
+    window.addEventListener("storage", () => {
+      if (retrieveUserSession) window.location.replace("/");
+    });
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/" component={Login} exact />
+        <PrivateRoute path="/home" component={Home} />
+        <PrivateRoute path="/tasks" component={Task} />
+        <PrivateRoute path="/profile" component={User} />
+        <Route path="*" component={NotFound} />
+      </Switch>
+    </Router>
   );
-}
+};
 
 export default App;
